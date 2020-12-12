@@ -13,24 +13,23 @@ bot.on('message', (msg) => {
 }); 
 // This command was created as a test to make sure the bot works correctly and doesn't send the same message multiple times.
 bot.on('message', (msg) => {
-    if (msg.content === '$downloads'){
-        msg.reply(`Okay here you go!
-        **ANB AIO** (http://bit.ly/ANB-AIO-Setup)
-        **ANB AIO V2** (http://downloadsv2.aiobot.com/)
-        **BNB** (http://bnba.io/download-bnb)
-        **Balko (Mac - Zip)** (http://rb.gy/6ya323)
-        **Balko (Mac)** (http://rb.gy/zagmsj)
-        **Balko (Windows)** (https://rb.gy/stcykc)
-        **Balko Cookie Extension** (https://s3.amazonaws.com/balkobot.com/BalkoExtension.zip)
-        **CyberAIO** (https://rb.gy/4q2cck)
-        **Dashe** (http://rb.gy/iceabf)
-        **EveAIO** (https://rb.gy/lmzgya)\n
-        **EveCaptcha (Mac)** (https://rb.gy/4mnhky)
-        **EveCaptcha (Windows)** (https://rb.gy/enmpff)
+    if (msg.content === '$embed') {
+        const embed = new MessageEmbed()
+        // Set the title
+            .setTitle('This is a test')
+        // Set the color (THIS IS A HEX CODE)   
+           .setColor(0xff0000)
+        // Set the description
+            .setDescription('This is a test to see if the bot makes an embed message.');
+        // This will send the message
+        msg.channel.send(embed);
+    }
+}));
+
         `);
     }
 });
-// More bot download links can be added. I will update this when I get to formatting this text to embed to make the message look much cleaner.
+// This can be edited in anyway so that you have your own message on the Discord Bot
 bot.login(token);
 
 bot.on('ready',() =>{
